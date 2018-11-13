@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+<!--    <form action="https://testapp-rk.azurewebsites.net/api/HttpTrigger1" method="post">
+        <input type="hidden" name="code" id="code" value="h7LQiur9UvAqMhLT4iXIqPq/FGP/KyJIG/ovoVl3654hm4tw32O2Uw==">
+-->
+        <div>
+          <label for="name">名前</label>
+          <input type="text" name="name" id="name" value="kiyono">
+        </div>
+        <div>
+          <label for="task">打刻</label>
+          <input type="text" name="task" id="task" value="mesi">
+        </div>
+        <div>
+          <input type="button" id="submit" value="button"/>
+        </div>
+      </form>
+      
+      <script type="text/javascript">
+        $("#submit").on('click', function() {
+          var data = {
+              "name": "aaaa",
+              "task": "bbbb"
+          };
+
+          $.ajax({
+            type: 'post',
+            url: 'https://testapp-rk.azurewebsites.net/api/HttpTrigger1?code=h7LQiur9UvAqMhLT4iXIqPq/FGP/KyJIG/ovoVl3654hm4tw32O2Uw==',
+            contentType: 'application/json',
+            dataType: 'json',
+            data:JSON.stringify(data),
+            cache: false
+          }).done(function(data){
+              alert("success");
+              alert(data);
+          }).fail(function(data){
+            alert("error");
+          });
+        });
+      </script>
+    </body>
+</html>
